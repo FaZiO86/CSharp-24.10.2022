@@ -23,5 +23,23 @@ namespace CSharp_24._10._2022 {
                 }
             }
         }
+        public int gender { 
+            get { return gender; }
+            set {
+                if(gender == 0) {
+                    if (Age > 0 && Age < 65) {
+                        throw new Exception("не пенсионный возраст для мужчины");
+                    }
+                }
+                else if (gender == 1) { 
+                    if(Age > 0 && Age < 60) {
+                        throw new Exception("не пенсионный возраст для женщины");
+                    }
+                }
+                else {
+                    throw new Exception("не корректный возраст");
+                }
+            }
+        }
     }
 }
