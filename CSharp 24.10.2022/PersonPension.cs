@@ -7,38 +7,31 @@ using System.Threading.Tasks;
 namespace CSharp_24._10._2022 {
     internal class PersonPension {
         private int age;
+        private int gender;
         public string Name { get; set; } = "User" + DateTime.Now.ToString("yyyy.MM.dd-HH:mm:ss.fff");
         public int Age {
             get { return age; } // get => age;
             set {
-                if (value < 0) // throw new Exception("Некорректный возраст");
-                {
-                    throw new Exception("Некорректный возраст");
-                }
-                else {
-                    if (value > 0 && value < 65) {
-                        throw new Exception("Человек ещё не на пенсии");
-                    }
-                    else age = value;
-                }
-            }
-        }
-        public int gender { 
-            get { return gender; }
-            set {
-                if(gender == 0) {
-                    if (Age > 0 && Age < 65) {
+                if (Gender == 0) {
+                    if (age > 0 && age < 65) {
                         throw new Exception("не пенсионный возраст для мужчины");
                     }
                 }
-                else if (gender == 1) { 
-                    if(Age > 0 && Age < 60) {
+                else if (Gender == 1) {
+                    if (age > 0 && age < 60) {
                         throw new Exception("не пенсионный возраст для женщины");
                     }
+                    
                 }
                 else {
                     throw new Exception("не корректный возраст");
                 }
+            }
+        }
+        public int Gender { 
+            get { return gender; }
+            set {
+                gender = value;
             }
         }
     }
