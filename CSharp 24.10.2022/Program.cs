@@ -19,13 +19,12 @@ namespace UserExeption
             //Console.WriteLine($"Задано имя пользователя {Misha.Name} введите возраст:");
             //Misha.Age = int.Parse(Console.ReadLine());
             var Misha = new PersonPension();
-            Console.WriteLine($"Создан пользователь {Misha.Name} введите его пол\n [0] Мужчина\n [1] Женщина");
-            Misha.Gender = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Введите его имя:");
-            Misha.Name = Console.ReadLine();
-
             try
             {
+                Console.WriteLine($"Создан пользователь {Misha.Name} введите его пол\n [0] Мужчина\n [1] Женщина");
+                Misha.Gender = int.Parse(Console.ReadLine());
+                Console.WriteLine($"Введите его имя:");
+                Misha.Name = Console.ReadLine();
                 Console.WriteLine($"Задано имя пользователя {Misha.Name} введите возраст:");
                 Misha.Age = int.Parse(Console.ReadLine());
             }

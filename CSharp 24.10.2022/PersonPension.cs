@@ -8,7 +8,7 @@ namespace CSharp_24._10._2022 {
     internal class PersonPension {
         private int age;
         private int gender;
-        public string Name { get; set; } = "User" + DateTime.Now.ToString("yyyy.MM.dd-HH:mm:ss.fff");
+        public string Name { get; set; } = " User " + DateTime.Now.ToString("yyyy.MM.dd-HH:mm:ss.fff");
         public int Age {
             get { return age; } // get => age;
             set {
@@ -31,19 +31,14 @@ namespace CSharp_24._10._2022 {
         }
         public int Gender { 
             get { return gender; }
-            set {
-                do {
-                    if (value == 0 | value == 1) {
-                        gender = value;
-                    }
-                    else {
-                        //throw new Exception("не корректный ввод");
-                        Console.WriteLine("не корректный ввод, попробуйте снова");
-                        
-                    }
-                    value = int.Parse(Console.ReadLine());
-                } while (value != 0 && value != 1);
-                
+            set { 
+                if (value == 0 | value == 1) {
+                    gender = value;
+                }
+                else {
+                    throw new Exception("не корректный ввод");
+                }
+                    
             }
         }
     }
