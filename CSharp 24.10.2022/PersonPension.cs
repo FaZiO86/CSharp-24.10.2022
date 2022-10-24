@@ -12,26 +12,38 @@ namespace CSharp_24._10._2022 {
         public int Age {
             get { return age; } // get => age;
             set {
-                if (Gender == 0) {
-                    if (age > 0 && age < 65) {
-                        throw new Exception("не пенсионный возраст для мужчины");
+                if (gender == 0) {
+                    if (value > 0 && value < 65) {
+                        throw new Exception($"не пенсионный возраст для мужчины {Name}");
                     }
                 }
-                else if (Gender == 1) {
-                    if (age > 0 && age < 60) {
-                        throw new Exception("не пенсионный возраст для женщины");
+                else if (gender == 1) {
+                    if (value > 0 && value < 60) {
+                        throw new Exception($"не пенсионный возраст для женщины {Name}");
                     }
                     
                 }
                 else {
                     throw new Exception("не корректный возраст");
                 }
+                age = value;
             }
         }
         public int Gender { 
             get { return gender; }
             set {
-                gender = value;
+                do {
+                    if (value == 0 | value == 1) {
+                        gender = value;
+                    }
+                    else {
+                        //throw new Exception("не корректный ввод");
+                        Console.WriteLine("не корректный ввод, попробуйте снова");
+                        
+                    }
+                    value = int.Parse(Console.ReadLine());
+                } while (value != 0 && value != 1);
+                
             }
         }
     }

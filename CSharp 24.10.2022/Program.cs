@@ -21,7 +21,7 @@ namespace UserExeption
             var Misha = new PersonPension();
             Console.WriteLine($"Создан пользователь {Misha.Name} введите его пол\n [0] Мужчина\n [1] Женщина");
             Misha.Gender = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Создан пользователь {Misha.Name} введите его имя:");
+            Console.WriteLine($"Введите его имя:");
             Misha.Name = Console.ReadLine();
 
             try
